@@ -26,8 +26,8 @@ module.exports = {
         "5xl": "4.210rem",
       },
       fontFamily: {
-        heading: "Poppins",
-        body: "Poppins",
+        heading: "Inter",
+        body: "Inter",
       },
       fontWeight: {
         normal: "400",
