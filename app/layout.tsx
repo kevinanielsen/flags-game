@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/theme-providor";
 
 export const metadata: Metadata = {
   title: "Flags Game",
@@ -15,8 +16,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
