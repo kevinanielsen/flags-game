@@ -1,6 +1,7 @@
 import GameInput from "@/components/game-input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+//@ts-expect-error
 import CountriesList from "public/flags.json";
 
 export interface ICountry {
