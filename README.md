@@ -4,6 +4,8 @@ First, clone the project to your machine:
 
 ```bash
 git clone https://github.com/kevinanielsen/flags-game/
+# or
+git clone git@github.com:kevinanielsen/flags-game
 ```
 
 Then, install the dependencies:
