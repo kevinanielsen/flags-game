@@ -1,20 +1,26 @@
-import Image from "next/image";
-import GameInput from "../game-input";
+"use client";
+
 import { ICountry } from "@/app/game/page";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import GameInput from "../game-input";
+import { DispatchWithoutAction, useState } from "react";
 
 interface IGame {
   randomCountry: ICountry;
 }
 
 const Game: React.FC<IGame> = ({ randomCountry }) => {
+  const [score, setScore] = useState<number>(0);
+
+  const handleScore: DispatchWithoutAction = () => {
+    setScore(score + 1);
+  };
+
   return (
-    <div className="border w-full rounded-md h-auto">
+    <div className="border w-full rounded-md h-auto overflow-hidden">
       <div className="border-b flex w-full items-center justify-between p-2">
-        <p id="score-count">
-          {/* Dummy Text */}
-          9/195
-        </p>
+        <p id="score-count">{score}/195</p>
         <Button size="sm" variant="outline">
           Cancel
         </Button>
@@ -31,7 +37,7 @@ const Game: React.FC<IGame> = ({ randomCountry }) => {
           alt="Random Flag"
           className="shadow-lg border"
         />
-        <GameInput randomCountry={randomCountry} />
+        <GameInput randomCountry={randomCountry} handleScore={handleScore} />
       </div>
     </div>
   );

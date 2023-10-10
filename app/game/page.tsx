@@ -19,7 +19,7 @@ const GamePage = () => {
 
   return (
     <main className="absolute w-full h-[90%] flex justify-center items-center">
-      <div className="flex justify-center items-center gap-8 w-full max-w-2xl">
+      <div className="flex justify-center items-center gap-8 w-full max-w-2xl p-4">
         <Game randomCountry={randomCountry} />
       </div>
     </main>

@@ -5,19 +5,32 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ICountry } from "@/app/game/page";
-import { FormEvent, useState } from "react";
+import { DispatchWithoutAction, FormEvent, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 interface IGameInputProps {
   randomCountry: ICountry;
+  handleScore: DispatchWithoutAction;
 }
 
-const GameInput: React.FC<IGameInputProps> = ({ randomCountry }) => {
+const GameInput: React.FC<IGameInputProps> = ({
+  randomCountry,
+  handleScore,
+}) => {
   const { country, countryCode, flagPng, flagSvg } = randomCountry;
 
   const [guess, setGuess] = useState<string>("");
 
+  const { toast } = useToast();
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (guess === country) {
+      handleScore();
+      setGuess("");
+    } else {
+      toast({ variant: "error", title: "Wrong guess!" });
+    }
   };
 
   return (
