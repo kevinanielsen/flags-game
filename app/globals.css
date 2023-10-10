@@ -12,9 +12,13 @@
   }
   .dark {
     --text: #fcfcf8;
-    --background: #000000;
+    --background: rgb(2 6 23);
     --primary: #474790;
     --secondary: #2c162c;
     --accent: #5e5eb0;
+  }
+
+  * {
+    @apply dark:bg-background bg-background;
   }
 }
