@@ -18,7 +18,7 @@
     --accent: #5e5eb0;
   }
 
-  * {
+  html {
     @apply dark:bg-background bg-background;
   }
 }
