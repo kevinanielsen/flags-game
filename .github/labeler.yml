@@ -1,4 +1,4 @@
 "docs: ": 
-  - *.md
+  - '*.md'
 "test: ": 
   - app/tests/**/*
