@@ -40,6 +40,7 @@
     "eslint-config-next": "latest",
     "husky": "^8.0.3",
     "postcss": "latest",
+    "prisma": "^5.4.2",
     "tailwindcss": "latest",
     "typescript": "latest"
   }
