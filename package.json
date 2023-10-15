@@ -21,6 +21,7 @@
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
     "framer-motion": "^10.16.4",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.279.0",
     "mongodb": "^6.1.0",
     "next": "latest",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
+    "@types/jsonwebtoken": "^9.0.3",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
