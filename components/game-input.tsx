@@ -11,13 +11,19 @@ import { useToast } from "@/components/ui/use-toast";
 interface IGameInputProps {
   randomCountry: ICountry;
   handleScore: DispatchWithoutAction;
+  handleCorrect: (index: number) => void;
+  index: number;
+  handleNewCountry: DispatchWithoutAction;
 }
 
 const GameInput: React.FC<IGameInputProps> = ({
   randomCountry,
   handleScore,
+  handleCorrect,
+  index,
+  handleNewCountry,
 }) => {
-  const { country, countryCode, flagPng, flagSvg } = randomCountry;
+  const { country } = randomCountry;
 
   const [guess, setGuess] = useState<string>("");
 
@@ -28,7 +34,10 @@ const GameInput: React.FC<IGameInputProps> = ({
     if (guess === country) {
       handleScore();
       setGuess("");
+      handleNewCountry();
+      handleCorrect(index);
     } else {
+      console.log(`guess: ${guess}, country: ${country}`);
       toast({ variant: "error", title: "Wrong guess!" });
     }
   };
@@ -43,6 +52,9 @@ const GameInput: React.FC<IGameInputProps> = ({
         type="text"
         value={guess}
         onChange={(e) => setGuess(e.target.value)}
+        spellCheck={false}
+        required
+        autoComplete="off"
       />
       <div className="flex gap-2 mt-2">
         <Button type="submit" className="w-full">
