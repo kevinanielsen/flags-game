@@ -41,6 +41,7 @@ const GameInput: React.FC<IGameInputProps> = ({
       handleNewCountry();
       handleCorrect(index);
     } else {
+      console.log(`guess: ${guess}, country: ${country}`);
       toast({ variant: "error", title: "Wrong guess!" });
     }
   };
