@@ -29,6 +29,10 @@ const GameInput: React.FC<IGameInputProps> = ({
 
   const { toast } = useToast();
 
+  const handleSkip: () => void = () => {
+    handleNewCountry();
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (guess === country) {
@@ -60,7 +64,13 @@ const GameInput: React.FC<IGameInputProps> = ({
         <Button type="submit" className="w-full">
           Submit Guess
         </Button>
-        <Button type="button" size="icon" variant="outline" className="w-12">
+        <Button
+          type="button"
+          size="icon"
+          variant="outline"
+          className="w-12"
+          onClick={handleSkip}
+        >
           <SkipForward />
         </Button>
       </div>

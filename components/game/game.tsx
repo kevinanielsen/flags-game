@@ -24,7 +24,7 @@ const Game: React.FC<IGame> = ({ getRandomCountry, handleCorrect }) => {
 
   const handleNewCountry: DispatchWithoutAction = useCallback(() => {
     setRandomCountry(getRandomCountry());
-  }, [getRandomCountry, setRandomCountry]);
+  }, [getRandomCountry]);
 
   useEffect(() => {
     handleNewCountry();
