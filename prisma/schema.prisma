@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Score {
+  score_id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  score_count   Float
+  user_name     String
+  created_at    DateTime @default(now())
+  seconds_spent Float
+}
