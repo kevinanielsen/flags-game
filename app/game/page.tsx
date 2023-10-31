@@ -3,7 +3,7 @@
 import Game from "@/components/game/game";
 //@ts-expect-error
 import CountriesList from "public/flags.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface ICountry {
   country: string;
@@ -20,6 +20,11 @@ export interface ICurrentCountry {
 const GamePage = () => {
   const [currentCountries, setCurrentCountries] =
     useState<ICountry[]>(CountriesList);
+
+  useEffect(() => {
+    if (currentCountries.length === 0) {
+    }
+  }, [currentCountries.length]);
 
   const getRandomInt: (flagCount: number) => number = (flagCount) => {
     console.log(flagCount);
