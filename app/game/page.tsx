@@ -1,5 +1,6 @@
 "use client";
 
+import EndGameInput from "@/components/game/end-game-input";
 import Game from "@/components/game/game";
 //@ts-expect-error
 import CountriesList from "public/flags.json";
@@ -21,10 +22,17 @@ const GamePage = () => {
   const [currentCountries, setCurrentCountries] =
     useState<ICountry[]>(CountriesList);
 
+  const [isGameEnded, setIsGameEnded] = useState<boolean>(true);
+
   useEffect(() => {
     if (currentCountries.length === 0) {
+      handleEndGame();
     }
   }, [currentCountries.length]);
+
+  const handleEndGame = () => {
+    setIsGameEnded(true);
+  };
 
   const getRandomInt: (flagCount: number) => number = (flagCount) => {
     console.log(flagCount);
@@ -47,10 +55,17 @@ const GamePage = () => {
   return (
     <main className="absolute w-full h-[90%] flex justify-center items-center">
       <div className="flex justify-center items-center gap-8 w-full max-w-2xl p-4">
-        <Game
-          handleCorrect={handleCorrect}
-          getRandomCountry={getRandomCountry}
-        />
+        {!isGameEnded ? (
+          <Game
+            handleCorrect={handleCorrect}
+            getRandomCountry={getRandomCountry}
+          />
+        ) : (
+          <EndGameInput
+            final_score={193 - currentCountries.length}
+            seconds_spent={400}
+          />
+        )}
       </div>
     </main>
   );
