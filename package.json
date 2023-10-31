@@ -13,8 +13,7 @@
   "pre-commit": [
     "precommit-msg",
     "format",
-    "lint",
-    "build"
+    "lint"
   ],
   "dependencies": {
     "@nextui-org/react": "^2.1.13",
