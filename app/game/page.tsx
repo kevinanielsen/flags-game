@@ -22,7 +22,7 @@ const GamePage = () => {
   const [currentCountries, setCurrentCountries] =
     useState<ICountry[]>(CountriesList);
 
-  const [isGameEnded, setIsGameEnded] = useState<boolean>(true);
+  const [isGameEnded, setIsGameEnded] = useState<boolean>(false);
 
   useEffect(() => {
     if (currentCountries.length === 0) {
@@ -35,7 +35,6 @@ const GamePage = () => {
   };
 
   const getRandomInt: (flagCount: number) => number = (flagCount) => {
-    console.log(flagCount);
     return Math.floor(flagCount * Math.random());
   };
 
@@ -59,6 +58,7 @@ const GamePage = () => {
           <Game
             handleCorrect={handleCorrect}
             getRandomCountry={getRandomCountry}
+            handleEndGame={handleEndGame}
           />
         ) : (
           <EndGameInput
