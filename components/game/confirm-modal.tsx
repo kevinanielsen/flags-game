@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import React, { Dispatch, SetStateAction } from "react";
 
 type TConfirmModal = {
-  setIsConfirmShow: () => Dispatch<SetStateAction<boolean>>;
+  setIsConfirmShow: Dispatch<SetStateAction<boolean>>;
   handleEndGame: () => void;
 };
 
