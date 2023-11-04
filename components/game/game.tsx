@@ -33,8 +33,6 @@ const Game: React.FC<IGame> = ({
     setRandomCountry(getRandomCountry());
   }, [getRandomCountry]);
 
-  const handleConfirmEndGame = () => {};
-
   useEffect(() => {
     handleNewCountry();
   }, [handleNewCountry]);
