@@ -38,13 +38,16 @@ const GamePage = () => {
     return Math.floor(flagCount * Math.random());
   };
 
-  const getRandomCountry: () => ICurrentCountry = () => {
+  const getRandomCountry: () => [flagCount: number, ICurrentCountry] = () => {
     const flagCount = currentCountries.length;
     const randomInt = getRandomInt(flagCount);
-    return {
-      country: currentCountries[randomInt],
-      index: randomInt,
-    };
+    return [
+      flagCount,
+      {
+        country: currentCountries[randomInt],
+        index: randomInt,
+      },
+    ];
   };
 
   const handleCorrect: (index: number) => void = (index: number) => {

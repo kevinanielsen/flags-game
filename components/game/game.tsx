@@ -8,7 +8,7 @@ import { DispatchWithoutAction, useCallback, useEffect, useState } from "react";
 import ConfirmModal from "./confirm-modal";
 
 interface IGame {
-  getRandomCountry: () => ICurrentCountry;
+  getRandomCountry: () => [flagCount: number, ICurrentCountry];
   handleEndGame: () => void;
   handleCorrect: (index: number) => void;
 }
@@ -24,18 +24,25 @@ const Game: React.FC<IGame> = ({
     index: number;
   }>();
   const [isConfirmShow, setIsConfirmShow] = useState<boolean>(false);
+  const [flagCount, setFlagCount] = useState<number>(193);
 
   const handleScore: DispatchWithoutAction = () => {
     setScore(score + 1);
   };
 
   const handleNewCountry: DispatchWithoutAction = useCallback(() => {
-    setRandomCountry(getRandomCountry());
+    const [fC, country] = getRandomCountry();
+    setRandomCountry(country);
+    setFlagCount(fC);
   }, [getRandomCountry]);
 
   useEffect(() => {
     handleNewCountry();
   }, [handleNewCountry]);
+
+  useEffect(() => {
+    if (flagCount === 0) handleEndGame();
+  }, [flagCount, handleEndGame]);
 
   if (!randomCountry) return <p>Loading...</p>;
 
