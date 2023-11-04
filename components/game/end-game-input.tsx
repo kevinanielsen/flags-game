@@ -2,11 +2,14 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import axios from "axios";
+import { Button } from "../ui/button";
+import { Spinner } from "@nextui-org/react";
 
 type TEndGameInput = {
   final_score: number;
-  seconds_spent?: number;
+  seconds_spent: number;
 };
 
 type TTimeSpent = {
@@ -21,35 +24,11 @@ const EndGameInput: React.FC<TEndGameInput> = ({
   final_score,
   seconds_spent,
 }) => {
-  const [timeSpent, setTimeSpent] = useState<TTimeSpent>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState();
+  const [data, setData] = useState();
 
-  const [hours, setHours] = useState<null | string>(null);
-  const [minutes, setMinutes] = useState<null | string>(null);
-  const [seconds, setSeconds] = useState<null | string>(null);
-
-  useEffect(() => {
-    if (seconds_spent) {
-      setTimeSpent(getTimeSpent(seconds_spent));
-    }
-
-    if (timeSpent) {
-      if (timeSpent.hours === 0) {
-        setHours(null);
-      } else {
-        setHours(`${timeSpent.hours} hours, `);
-      }
-      if (timeSpent.minutes === 0) {
-        setMinutes(null);
-      } else {
-        setMinutes(`${timeSpent.minutes} minutes, and `);
-      }
-      if (timeSpent.seconds === 0) {
-        setSeconds(null);
-      } else {
-        setSeconds(`${timeSpent.seconds} seconds.`);
-      }
-    }
-  }, [seconds_spent, timeSpent]);
+  const [name, setName] = useState<string>("");
 
   const getTimeSpent: (input_seconds: number) => TTimeSpent = (
     input_seconds: number,
@@ -70,20 +49,51 @@ const EndGameInput: React.FC<TEndGameInput> = ({
     return { hours, minutes, seconds };
   };
 
+  const { hours, minutes, seconds } = getTimeSpent(seconds_spent);
+
+  const handleSubmit = () => {
+    setIsLoading(true);
+
+    axios
+      .post("/api/score", {
+        score_count: final_score,
+        user_name: name,
+        seconds_spent: seconds_spent,
+      })
+      .then((res) => console.log(res))
+      .catch((err: any) => setError(err))
+      .finally(() => setIsLoading(false));
+  };
+
+  if (isLoading) return <Spinner />;
+
   return (
-    <div className="border w-full rounded-md h-auto overflow-hidden flex p-4 flex-col justify-center">
+    <div className="border w-full rounded-md h-auto overflow-hidden flex p-4 g-4 flex-col justify-center">
       <p className="text-lg">
         Final score: {final_score | 0}
-        {timeSpent && (
+        {hours ? (
           <p>
-            Finished in {hours} {minutes} {seconds}
+            Finished in {hours} hours, {minutes} minutes, and {seconds} seconds.
+          </p>
+        ) : (
+          <p>
+            Finished in {minutes} minutes, and {seconds} seconds.
           </p>
         )}
       </p>
-      <Label className="text-lg w-3/4">
-        Enter your name:
-        <Input />
-      </Label>
+      <form className="flex flex-col gap-4 mt-4">
+        <Label className="text-lg w-3/4">
+          Enter your name:
+          <Input
+            placeholder="Enter your name:"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </Label>
+        <Button type="submit" className="max-w-fit" onClick={handleSubmit}>
+          Submit score
+        </Button>
+      </form>
     </div>
   );
 };
