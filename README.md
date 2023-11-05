@@ -1,7 +1,5 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#installation)
-
 ## ➤ Installation
 
 First, clone the project to your machine:
@@ -15,19 +13,17 @@ git clone git@github.com:kevinanielsen/flags-game
 Then, install the dependencies:
 
 ```bash
-bun install
+pnpm i
 # ➤ or
 npm install
 ```
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#getting-started)
 
 ## ➤ Getting started
 
 First, run the development server:
 
 ```bash
-bun dev
+pnpm dev
 # ➤ or
 npm run dev
 ```
