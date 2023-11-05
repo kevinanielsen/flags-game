@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 const ratelimit = newRateLimit();
 
 export async function middleware(request: NextRequest) {
-  const ip = request.ip ?? "";
+  const ip = request.headers.get("x-forwarded-for") ?? "";
   const { success, reset } = await ratelimit.limit(ip);
 
   if (!success) {
