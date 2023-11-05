@@ -6,19 +6,12 @@ import { useState } from "react";
 import axios from "axios";
 import { Button } from "../ui/button";
 import { Spinner } from "@nextui-org/react";
+import getTimeSpent from "@/app/actions/getTimeSpent";
 
 type TEndGameInput = {
   final_score: number;
   seconds_spent: number;
 };
-
-type TTimeSpent = {
-  hours: number;
-  minutes: number;
-  seconds: number;
-};
-
-type TTimeTaken = string | null | undefined;
 
 const EndGameInput: React.FC<TEndGameInput> = ({
   final_score,
@@ -26,28 +19,9 @@ const EndGameInput: React.FC<TEndGameInput> = ({
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState();
-  const [data, setData] = useState();
+  const [data, setData] = useState<any>();
 
   const [name, setName] = useState<string>("");
-
-  const getTimeSpent: (input_seconds: number) => TTimeSpent = (
-    input_seconds: number,
-  ) => {
-    let hours: number = 0;
-    let minutes: number = 0;
-    let seconds: number = input_seconds;
-
-    if (seconds > 60) {
-      minutes = Math.round(seconds / 60);
-      seconds = seconds % 60;
-      if (minutes > 60) {
-        hours = Math.round(minutes / 60);
-        minutes = minutes % 60;
-      }
-    }
-
-    return { hours, minutes, seconds };
-  };
 
   const { hours, minutes, seconds } = getTimeSpent(seconds_spent);
 
@@ -60,7 +34,7 @@ const EndGameInput: React.FC<TEndGameInput> = ({
         user_name: name,
         seconds_spent: seconds_spent,
       })
-      .then((res) => console.log(res))
+      .then((res) => setData(res))
       .catch((err: any) => setError(err))
       .finally(() => setIsLoading(false));
   };
