@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { redirect } from "next/dist/server/api-utils";
 import { NextRequest, NextResponse } from "next/server";
 
 interface IBody {
