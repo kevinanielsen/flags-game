@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { ThemeProvider, Providers } from "@/app/providers";
+import Providers from "@/app/providers";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
@@ -18,15 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar />
-            {children}
-          </ThemeProvider>
+          <Navbar />
+          {children}
           <Toaster />
         </Providers>
       </body>
