@@ -390,12 +390,6 @@
     "flagPng": "https://flagcdn.com/w320/gm.png"
   },
   {
-    "country": "Georgia",
-    "countryCode": "GS",
-    "flagSvg": "https://flagcdn.com/gs.svg",
-    "flagPng": "https://flagcdn.com/w320/gs.png"
-  },
-  {
     "country": "Germany",
     "countryCode": "DE",
     "flagSvg": "https://flagcdn.com/de.svg",
@@ -490,12 +484,6 @@
     "countryCode": "IQ",
     "flagSvg": "https://flagcdn.com/iq.svg",
     "flagPng": "https://flagcdn.com/w320/iq.png"
-  },
-  {
-    "country": "Ireland",
-    "countryCode": "GB",
-    "flagSvg": "https://flagcdn.com/gb.svg",
-    "flagPng": "https://flagcdn.com/w320/gb.png"
   },
   {
     "country": "Israel",
