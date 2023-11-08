@@ -1,10 +1,21 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { useQuery } from "@tanstack/react-query";
+import { Spinner } from "@nextui-org/react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 const data = Array.from({ length: 50 }).map((_, i) => `${i}. John Doe`);
 
-const LeaderBoard = () => {
+const LeaderBoard = async () => {
+  const queryClient = useQueryClient();
+
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ["top-scores"],
+    queryFn: async () => await axios.get("/api/top-scores"),
+  });
+
+  if (isLoading) return <Spinner />;
+
   return (
     <ScrollArea className="w-full h-72 rounded-md border">
       <div className="p-4">
