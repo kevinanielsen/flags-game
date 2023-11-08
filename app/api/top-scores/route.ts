@@ -1,7 +1,26 @@
 import prisma from "@/lib/prisma";
-import { NextResponse } from "next/server";
+import newRateLimit from "@/lib/ratelimit";
+import { headers } from "next/headers";
+import { NextRequest, NextResponse } from "next/server";
+
+const ratelimit = newRateLimit(5, 20);
 
 export async function GET() {
+  const headersList = headers();
+  const ip = headersList.get("x-forwarded-for") ?? "127.0.0.1";
+
+  const { success, reset } = await ratelimit.limit(ip);
+
+  if (!success) {
+    const now = Date.now();
+    const retryAfter = Math.floor((reset - now) / 1000);
+    return new NextResponse(`Too many requests. IP: ${ip}`, {
+      status: 429,
+      headers: {
+        ["retry-after"]: `${retryAfter}`,
+      },
+    });
+  }
   try {
     const top_scores = await prisma.score.findMany({
       take: 100,
