@@ -61,7 +61,7 @@ const Game: React.FC<IGame> = ({
           variant="outline"
           onClick={() => setIsConfirmShow(true)}
         >
-          Cancel
+          End Game
         </Button>
         <p id="timer">
           {/* Dummy Text */}
