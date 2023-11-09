@@ -65,7 +65,7 @@ const GamePage = () => {
           />
         ) : (
           <EndGameInput
-            final_score={193 - currentCountries.length}
+            final_score={CountriesList.length - currentCountries.length}
             seconds_spent={400}
           />
         )}
