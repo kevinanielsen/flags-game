@@ -43,13 +43,15 @@ const EndGameInput: React.FC<TEndGameInput> = ({
           user_name: name,
           seconds_spent: seconds_spent,
         })
-        .then(() => toast({ title: "Score saved!" }))
+        .then(() => {
+          toast({ title: "Score saved!" });
+          router.push("/", { scroll: false });
+        })
         .catch((err) => {
           toast({ title: err.response.data, variant: "error" });
         })
         .finally(() => {
           setIsLoading(false);
-          router.push("/", { scroll: false });
           setName("");
         });
     }
