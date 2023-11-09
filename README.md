@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/393ff6669db5798ee124/maintainability)](https://codeclimate.com/github/kevinanielsen/flags-game/maintainability)
+
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 
 ## ➤ Installation
