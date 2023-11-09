@@ -5,10 +5,10 @@ import { Label } from "@/components/ui/label";
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
-import { Spinner, user } from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 import getTimeSpent from "@/app/actions/getTimeSpent";
 import { useToast } from "@/components/ui/use-toast";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type TEndGameInput = {
   final_score: number;
@@ -43,13 +43,15 @@ const EndGameInput: React.FC<TEndGameInput> = ({
           user_name: name,
           seconds_spent: seconds_spent,
         })
-        .then(() => toast({ title: "Score saved!" }))
+        .then(() => {
+          toast({ title: "Score saved!" });
+          router.push("/", { scroll: false });
+        })
         .catch((err) => {
           toast({ title: err.response.data, variant: "error" });
         })
         .finally(() => {
           setIsLoading(false);
-          router.push("/", { scroll: false });
           setName("");
         });
     }
