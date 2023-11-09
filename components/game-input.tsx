@@ -35,7 +35,7 @@ const GameInput: React.FC<IGameInputProps> = ({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (guess === country) {
+    if (guess.toLowerCase() === country.toLowerCase()) {
       handleScore();
       setGuess("");
       handleNewCountry();
