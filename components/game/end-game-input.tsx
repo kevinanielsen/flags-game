@@ -5,10 +5,10 @@ import { Label } from "@/components/ui/label";
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
-import { Spinner, user } from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 import getTimeSpent from "@/app/actions/getTimeSpent";
 import { useToast } from "@/components/ui/use-toast";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type TEndGameInput = {
   final_score: number;
