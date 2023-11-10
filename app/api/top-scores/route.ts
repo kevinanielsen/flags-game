@@ -1,3 +1,4 @@
+import getTopScores from "@/app/actions/getTopScores";
 import prisma from "@/lib/prisma";
 import newRateLimit from "@/lib/ratelimit";
 import { headers } from "next/headers";
@@ -22,26 +23,8 @@ export async function GET() {
     });
   }
   try {
-    const top_scores = await prisma.score.findMany({
-      take: 100,
-      orderBy: {
-        score_count: "desc",
-      },
-    });
-
-    if (top_scores) {
-      const TopScores = top_scores.filter((score) => score.score_count === 193);
-
-      const notTopScores = top_scores.filter(
-        (score) => score.score_count !== 193,
-      );
-
-      const sortedTopScores = TopScores.sort(
-        (a, b) => a.seconds_spent - b.seconds_spent,
-      );
-
-      const sortedScores = [...sortedTopScores, ...notTopScores];
-
+    const sortedScores = await getTopScores();
+    if (sortedScores) {
       return NextResponse.json(sortedScores, { status: 200 });
     } else {
       return NextResponse.json({}, { status: 500 });
