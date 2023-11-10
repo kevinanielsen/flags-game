@@ -1,4 +1,4 @@
-"docs: ":
+"documentation":
   - "*.md"
-"test: ":
-  - app/tests/**/*
+"test":
+  - "*.test.{ts, js, tsx, jsx}"
