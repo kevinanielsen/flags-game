@@ -24,6 +24,8 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
+    - name: Generate prisma client
+      run: pnpm db:push
     - name: Lint
       run: pnpm lint
     - name: Test
