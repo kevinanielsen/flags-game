@@ -3,7 +3,6 @@ env:
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
 on:
-  push:
   pull_request:
     branches:
     - main
