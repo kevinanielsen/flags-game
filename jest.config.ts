@@ -4,6 +4,8 @@
  */
 
 import type { Config } from "jest";
+const { pathsToModuleNameMapper } = require("ts-jest");
+const { compilerOptions } = require("./tsconfig");
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -102,7 +104,11 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  preset: "ts-jest",
+  testEnvironment: "node",
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: "<rootDir>/",
+  }),
 
   // Run tests from one or more projects
   // projects: undefined,
