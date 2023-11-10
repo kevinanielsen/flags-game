@@ -10,7 +10,7 @@ test("getTopScores function", async () => {
   };
 
   const response = await getTopScores();
-  if (response) {
+  if (response instanceof Array) {
     const result = response[0];
 
     expect(expected.score_id).toBe(result.score_id);
