@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/393ff6669db5798ee124/maintainability)](https://codeclimate.com/github/kevinanielsen/flags-game/maintainability)
+![CI](https://github.com/kevinanielsen/flags-game/actions/workflows/ci.yml/badge.svg)
 
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 
