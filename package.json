@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
     "lint": "next lint",
     "format": "prettier . --write",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
