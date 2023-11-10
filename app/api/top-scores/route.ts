@@ -1,8 +1,7 @@
 import getTopScores from "@/app/actions/getTopScores";
-import prisma from "@/lib/prisma";
 import newRateLimit from "@/lib/ratelimit";
 import { headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const ratelimit = newRateLimit(5, 20);
 
