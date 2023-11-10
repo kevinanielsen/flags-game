@@ -45,15 +45,10 @@ const LeaderBoard = () => {
     return (
       <ScrollArea className="w-full h-72 rounded-md border">
         <div className="p-4">
-          <h3 className="mb-4 text-base font-medium leading-none">
-            Leaderboard
-          </h3>
+          <h3 className="mb-4 text-lg font-medium leading-none">Leaderboard</h3>
           {data.map((score) => (
             <>
-              <div
-                className="text-sm flex justify-between"
-                key={score.score_id}
-              >
+              <div className="flex justify-between" key={score.score_id}>
                 <p>{score.user_name}</p>
                 <p>{score.score_count}</p>
               </div>
