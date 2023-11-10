@@ -1,4 +1,6 @@
 name: ci
+env:
+  NAME: test
 on:
   push:
   pull_request:
