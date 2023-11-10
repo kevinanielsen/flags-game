@@ -1,6 +1,7 @@
 name: ci
 env:
-  NAME: test
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
 on:
   push:
   pull_request:
