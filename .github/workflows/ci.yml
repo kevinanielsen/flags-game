@@ -4,35 +4,35 @@ env:
   JWT_SECRET: ${{ secrets.JWT_SECRET }}
   UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
   UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
-  
+
 on:
   pull_request:
     branches:
-    - main
+      - main
 jobs:
-  test: 
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
     steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 8
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
-    - name: Install dependencies
-      run: pnpm install
-    - name: Generate prisma client
-      run: pnpm db:push
-    - name: Lint
-      run: pnpm lint
-    - name: Test
-      run: pnpm test
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Generate prisma client
+        run: pnpm db:push
+      - name: Lint
+        run: pnpm lint
+      - name: Test
+        run: pnpm test
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -40,18 +40,18 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 8
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
-    - name: Install dependencies
-      run: pnpm install
-    - name: Generate prisma client
-      run: pnpm db:push
-    - name: Build
-      run: pnpm build
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Generate prisma client
+        run: pnpm db:push
+      - name: Build
+        run: pnpm build
