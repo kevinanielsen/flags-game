@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.2.9
     version: 2.2.9(@types/react@18.2.37)(framer-motion@10.16.5)(react-dom@18.2.0)(react@18.2.0)(tailwind-variants@0.1.18)(tailwindcss@3.3.5)
   "@prisma/client":
-    specifier: 5.4.2
-    version: 5.4.2(prisma@5.5.2)
+    specifier: 5.5.1
+    version: 5.5.1(prisma@5.5.2)
   "@radix-ui/react-label":
     specifier: ^2.0.2
     version: 2.0.2(@types/react-dom@18.2.15)(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)
@@ -2975,10 +2975,10 @@ packages:
       "@nodelib/fs.scandir": 2.1.5
       fastq: 1.15.0
 
-  /@prisma/client@5.4.2(prisma@5.5.2):
+  /@prisma/client@5.5.1(prisma@5.5.2):
     resolution:
       {
-        integrity: sha512-2xsPaz4EaMKj1WS9iW6MlPhmbqtBsXAOeVttSePp8vTFTtvzh2hZbDgswwBdSCgPzmmwF+tLB259QzggvCmJqA==,
+        integrity: sha512-Yvcwx1/Q0nIdv2jvH/4pyTRl5I+76/ef0C3xCrAkBKTIjXHiRptbyyK/+CWEaBY9yE98MIdi9gwZcR3C22eTuQ==,
       }
     engines: { node: ">=16.13" }
     requiresBuild: true
@@ -2988,14 +2988,14 @@ packages:
       prisma:
         optional: true
     dependencies:
-      "@prisma/engines-version": 5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574
+      "@prisma/engines-version": 5.5.0-19.475c616176945d72f4330c92801f0c5e6398dc0f
       prisma: 5.5.2
     dev: false
 
-  /@prisma/engines-version@5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574:
+  /@prisma/engines-version@5.5.0-19.475c616176945d72f4330c92801f0c5e6398dc0f:
     resolution:
       {
-        integrity: sha512-wvupDL4AA1vf4TQNANg7kR7y98ITqPsk6aacfBxZKtrJKRIsWjURHkZCGcQliHdqCiW/hGreO6d6ZuSv9MhdAA==,
+        integrity: sha512-/1orOUq7I54ISYBJockYB15FmF/VkCBeFzYYkWyLtBl2tLlJWHmA3NEUBM+wSmXGLK78BmuSNHrLbf8bmXkukQ==,
       }
     dev: false
 
