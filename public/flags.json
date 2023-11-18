@@ -30,7 +30,7 @@
     "flagPng": "https://flagcdn.com/w320/ao.png"
   },
   {
-    "country": ["Antigua and Barbuda"],
+    "country": ["Antigua and Barbuda", "Antigua & Barbuda"],
     "countryCode": "AG",
     "flagSvg": "https://flagcdn.com/ag.svg",
     "flagPng": "https://flagcdn.com/w320/ag.png"
@@ -126,7 +126,11 @@
     "flagPng": "https://flagcdn.com/w320/bo.png"
   },
   {
-    "country": ["Bosnia and Herzegovina"],
+    "country": [
+      "Bosnia and Herzegovina",
+      "Bosnia Herzegovina",
+      "Bosnia & Herzegovina"
+    ],
     "countryCode": "BA",
     "flagSvg": "https://flagcdn.com/ba.svg",
     "flagPng": "https://flagcdn.com/w320/ba.png"
@@ -168,7 +172,7 @@
     "flagPng": "https://flagcdn.com/w320/bi.png"
   },
   {
-    "country": ["Cabo Verde"],
+    "country": ["Cabo Verde", "Cape Verde"],
     "countryCode": "CV",
     "flagSvg": "https://flagcdn.com/cv.svg",
     "flagPng": "https://flagcdn.com/w320/cv.png"
@@ -192,7 +196,7 @@
     "flagPng": "https://flagcdn.com/w320/ca.png"
   },
   {
-    "country": ["Central African Republic"],
+    "country": ["Central African Republic", "CAR"],
     "countryCode": "CF",
     "flagSvg": "https://flagcdn.com/cf.svg",
     "flagPng": "https://flagcdn.com/w320/cf.png"
@@ -210,7 +214,12 @@
     "flagPng": "https://flagcdn.com/w320/cl.png"
   },
   {
-    "country": ["China"],
+    "country": [
+      "China",
+      "People's Republic of China",
+      "Peoples Republic of China",
+      "Republic of China"
+    ],
     "countryCode": "CN",
     "flagSvg": "https://flagcdn.com/cn.svg",
     "flagPng": "https://flagcdn.com/w320/cn.png"
@@ -228,7 +237,12 @@
     "flagPng": "https://flagcdn.com/w320/km.png"
   },
   {
-    "country": ["Congo"],
+    "country": [
+      "Congo",
+      "Republic of the Congo",
+      "Republic of Congo",
+      "The Congo"
+    ],
     "countryCode": "CG",
     "flagSvg": "https://flagcdn.com/cg.svg",
     "flagPng": "https://flagcdn.com/w320/cg.png"
@@ -240,7 +254,13 @@
     "flagPng": "https://flagcdn.com/w320/cr.png"
   },
   {
-    "country": ["Côte d'Ivoire"],
+    "country": [
+      "Côte d'Ivoire",
+      "Ivory Coast",
+      "Cote d'Ivoire",
+      "Cote d Ivoire",
+      "Cote dIvoire"
+    ],
     "countryCode": "CI",
     "flagSvg": "https://flagcdn.com/ci.svg",
     "flagPng": "https://flagcdn.com/w320/ci.png"
@@ -264,25 +284,36 @@
     "flagPng": "https://flagcdn.com/w320/cy.png"
   },
   {
-    "country": ["Czechia"],
+    "country": ["Czechia", "Czech Republic"],
     "countryCode": "CZ",
     "flagSvg": "https://flagcdn.com/cz.svg",
     "flagPng": "https://flagcdn.com/w320/cz.png"
   },
   {
-    "country": ["South Korea"],
+    "country": ["South Korea", "Republic of Korea"],
     "countryCode": "KR",
     "flagSvg": "https://flagcdn.com/kr.svg",
     "flagPng": "https://flagcdn.com/w320/kr.png"
   },
   {
-    "country": ["North Korea"],
+    "country": [
+      "North Korea",
+      "Democratic People's Republic of Korea",
+      "Democratic Peoples Republic of Korea",
+      "DRPK"
+    ],
     "countryCode": "KP",
     "flagSvg": "https://flagcdn.com/kp.svg",
     "flagPng": "https://flagcdn.com/w320/kp.png"
   },
   {
-    "country": ["Democratic Republic of the Congo"],
+    "country": [
+      "Democratic Republic of the Congo",
+      "DRC",
+      "DR Congo",
+      "Democratic Republic of Congo",
+      "Democratic Republic Congo"
+    ],
     "countryCode": "CD",
     "flagSvg": "https://flagcdn.com/cd.svg",
     "flagPng": "https://flagcdn.com/w320/cd.png"
@@ -426,7 +457,7 @@
     "flagPng": "https://flagcdn.com/w320/gn.png"
   },
   {
-    "country": ["Guinea-Bissau"],
+    "country": ["Guinea-Bissau", "Guinea Bissau"],
     "countryCode": "GW",
     "flagSvg": "https://flagcdn.com/gw.svg",
     "flagPng": "https://flagcdn.com/w320/gw.png"
@@ -852,19 +883,26 @@
     "flagPng": "https://flagcdn.com/w320/rw.png"
   },
   {
-    "country": ["Saint Kitts and Nevis"],
+    "country": [
+      "Saint Kitts and Nevis",
+      "St Kitts and Nevis",
+      "Federation of Saint Christopher and Nevis"
+    ],
     "countryCode": "KN",
     "flagSvg": "https://flagcdn.com/kn.svg",
     "flagPng": "https://flagcdn.com/w320/kn.png"
   },
   {
-    "country": ["Saint Lucia"],
+    "country": ["Saint Lucia", "St Lucia"],
     "countryCode": "LC",
     "flagSvg": "https://flagcdn.com/lc.svg",
     "flagPng": "https://flagcdn.com/w320/lc.png"
   },
   {
-    "country": ["Saint Vincent and the Grenadines"],
+    "country": [
+      "Saint Vincent and the Grenadines",
+      "St Vincent and the Grenadines"
+    ],
     "countryCode": "VC",
     "flagSvg": "https://flagcdn.com/vc.svg",
     "flagPng": "https://flagcdn.com/w320/vc.png"
@@ -882,7 +920,11 @@
     "flagPng": "https://flagcdn.com/w320/sm.png"
   },
   {
-    "country": ["São Tomé and Príncipe"],
+    "country": [
+      "São Tomé and Príncipe",
+      "Sao Tome and Principe",
+      "Sao Tome & Principe"
+    ],
     "countryCode": "ST",
     "flagSvg": "https://flagcdn.com/st.svg",
     "flagPng": "https://flagcdn.com/w320/st.png"
@@ -1014,7 +1056,13 @@
     "flagPng": "https://flagcdn.com/w320/th.png"
   },
   {
-    "country": ["Timor-Leste"],
+    "country": [
+      "Timor-Leste",
+      "Timor Leste",
+      "East Timor",
+      "Democratic Republic of Timor-Leste",
+      "Democratic Republic of Timor Leste"
+    ],
     "countryCode": "TL",
     "flagSvg": "https://flagcdn.com/tl.svg",
     "flagPng": "https://flagcdn.com/w320/tl.png"
@@ -1032,7 +1080,7 @@
     "flagPng": "https://flagcdn.com/w320/to.png"
   },
   {
-    "country": ["Trinidad and Tobago"],
+    "country": ["Trinidad and Tobago", "Trinidad & Tobago"],
     "countryCode": "TT",
     "flagSvg": "https://flagcdn.com/tt.svg",
     "flagPng": "https://flagcdn.com/w320/tt.png"
@@ -1074,7 +1122,7 @@
     "flagPng": "https://flagcdn.com/w320/ua.png"
   },
   {
-    "country": ["United Arab Emirates"],
+    "country": ["United Arab Emirates", "UAE"],
     "countryCode": "AE",
     "flagSvg": "https://flagcdn.com/ae.svg",
     "flagPng": "https://flagcdn.com/w320/ae.png"
@@ -1092,7 +1140,12 @@
     "flagPng": "https://flagcdn.com/w320/tz.png"
   },
   {
-    "country": ["USA"],
+    "country": [
+      "United States of America",
+      "USA",
+      "United States America",
+      "United States"
+    ],
     "countryCode": "US",
     "flagSvg": "https://flagcdn.com/us.svg",
     "flagPng": "https://flagcdn.com/w320/us.png"
