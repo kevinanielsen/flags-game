@@ -7,7 +7,7 @@ import CountriesList from "public/flags.json";
 import { useEffect, useState } from "react";
 
 export interface ICountry {
-  country: string;
+  country: string[];
   countryCode: string;
   flagSvg: string;
   flagPng: string;

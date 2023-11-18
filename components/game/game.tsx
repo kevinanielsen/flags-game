@@ -47,7 +47,7 @@ const Game: React.FC<IGame> = ({
   if (!randomCountry) return <p>Loading...</p>;
 
   return (
-    <div className="border w-full rounded-md h-auto overflow-hidden">
+    <div className="border w-full rounded-md overflow-hidden">
       {isConfirmShow && (
         <ConfirmModal
           setIsConfirmShow={setIsConfirmShow}
@@ -68,7 +68,7 @@ const Game: React.FC<IGame> = ({
           1.25
         </p>
       </div>
-      <div className="h-96 pb-8 flex flex-col justify-end items-center">
+      <div className="min-h-[410px] pb-8 flex flex-col justify-end items-center">
         <Image
           src={randomCountry.country.flagSvg}
           width="200"
