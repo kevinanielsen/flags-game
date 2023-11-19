@@ -79,6 +79,7 @@ const Game: React.FC<IGame> = ({
           height="100"
           alt="Random Flag"
           className="shadow-lg border"
+          priority
         />
         <GameInput
           randomCountry={randomCountry.country}
