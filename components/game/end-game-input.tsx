@@ -6,27 +6,30 @@ import { FormEvent, useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@nextui-org/react";
-import getTimeSpent from "@/app/actions/getTimeSpent";
+import getTimeSpent, { TTimeSpent } from "@/app/actions/getTimeSpent";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 
 type TEndGameInput = {
   final_score: number;
-  seconds_spent: number;
+  gameEndTime: number;
+  gameStartTime: number;
 };
 
 const EndGameInput: React.FC<TEndGameInput> = ({
   final_score,
-  seconds_spent,
+  gameStartTime,
+  gameEndTime,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [name, setName] = useState<string>("");
+  const timeSpent: TTimeSpent = getTimeSpent(
+    Number(new Date(gameEndTime - gameStartTime)) / 1000,
+  );
 
   const { toast } = useToast();
   const router = useRouter();
-
-  const { hours, minutes, seconds } = getTimeSpent(seconds_spent);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,7 +44,7 @@ const EndGameInput: React.FC<TEndGameInput> = ({
         .post("/api/score", {
           score_count: final_score,
           user_name: name,
-          seconds_spent: seconds_spent,
+          seconds_spent: Number(new Date(gameEndTime - gameStartTime)) / 1000,
         })
         .then(() => {
           toast({ title: "Score saved!" });
@@ -61,21 +64,25 @@ const EndGameInput: React.FC<TEndGameInput> = ({
 
   return (
     <div className="border w-full rounded-md h-auto overflow-hidden flex p-4 g-4 flex-col justify-center">
-      <p className="text-lg">
+      <div className="text-lg">
         Final score: {final_score | 0}
-        {hours ? (
+        {timeSpent.hours ? (
           <p>
-            Finished in {hours} hours, {minutes} minutes, and {seconds} seconds.
+            Finished in {timeSpent.hours} hours, {timeSpent.minutes} minutes,
+            and {timeSpent.seconds} seconds.
           </p>
         ) : (
           <p>
-            Finished in {minutes} minutes, and {seconds} seconds.
+            Finished in {timeSpent.minutes} minutes, and {timeSpent.seconds}{" "}
+            seconds.
           </p>
         )}
-      </p>
+      </div>
       <form
         className="flex flex-col gap-4 mt-4"
         onSubmit={(e) => handleSubmit(e)}
+        name="endGameInput"
+        id="endGameInput"
       >
         <Label className="text-lg w-3/4">
           Enter your name:

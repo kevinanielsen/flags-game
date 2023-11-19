@@ -11,10 +11,10 @@ const getTimeSpent: (input_seconds: number) => TTimeSpent = (
   let minutes: number = 0;
   let seconds: number = Math.round(input_seconds);
 
-  if (seconds > 60) {
+  if (seconds >= 60) {
     minutes = Math.round(seconds / 60);
     seconds = Math.round(seconds % 60);
-    if (minutes > 60) {
+    if (minutes >= 60) {
       hours = Math.round(minutes / 60);
       minutes = Math.round(minutes % 60);
     }

@@ -48,7 +48,12 @@ const GameInput: React.FC<IGameInputProps> = ({
   };
 
   return (
-    <form className="w-60 mt-4" onSubmit={(e) => handleSubmit(e)}>
+    <form
+      className="w-60 mt-4"
+      name="gameInput"
+      id="gameInput"
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <Label htmlFor="guess">Guess</Label>
       <Input
         name="guess"
