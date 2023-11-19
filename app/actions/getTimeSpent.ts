@@ -1,4 +1,4 @@
-type TTimeSpent = {
+export type TTimeSpent = {
   hours: number;
   minutes: number;
   seconds: number;
@@ -9,14 +9,14 @@ const getTimeSpent: (input_seconds: number) => TTimeSpent = (
 ) => {
   let hours: number = 0;
   let minutes: number = 0;
-  let seconds: number = input_seconds;
+  let seconds: number = Math.round(input_seconds);
 
   if (seconds > 60) {
     minutes = Math.round(seconds / 60);
-    seconds = seconds % 60;
+    seconds = Math.round(seconds % 60);
     if (minutes > 60) {
       hours = Math.round(minutes / 60);
-      minutes = minutes % 60;
+      minutes = Math.round(minutes % 60);
     }
   }
 
