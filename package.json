@@ -35,7 +35,7 @@
     "dotenv": "^16.3.1",
     "framer-motion": "^10.16.5",
     "jsonwebtoken": "^9.0.2",
-    "lucide-react": "^0.290.0",
+    "lucide-react": "^0.291.0",
     "mongodb": "^6.2.0",
     "next": "latest",
     "next-themes": "^0.2.1",
