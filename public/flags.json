@@ -18,6 +18,12 @@
     "flagPng": "https://flagcdn.com/w320/dz.png"
   },
   {
+    "country": ["American Samoa"],
+    "countryCode": "AS",
+    "flagSvg": "https://flagcdn.com/as.svg",
+    "flagPng": "https://flagcdn.com/w320/as.png"
+  },
+  {
     "country": ["Andorra"],
     "countryCode": "AD",
     "flagSvg": "https://flagcdn.com/ad.svg",
@@ -906,12 +912,6 @@
     "countryCode": "VC",
     "flagSvg": "https://flagcdn.com/vc.svg",
     "flagPng": "https://flagcdn.com/w320/vc.png"
-  },
-  {
-    "country": ["American Samoa"],
-    "countryCode": "AS",
-    "flagSvg": "https://flagcdn.com/as.svg",
-    "flagPng": "https://flagcdn.com/w320/as.png"
   },
   {
     "country": ["San Marino"],
