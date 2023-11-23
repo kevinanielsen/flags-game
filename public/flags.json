@@ -914,6 +914,12 @@
     "flagPng": "https://flagcdn.com/w320/vc.png"
   },
   {
+    "country": ["Samoa"],
+    "countryCode": "WS",
+    "flagSvg": "https://flagcdn.com/ws.svg",
+    "flagPng": "https://flagcdn.com/w320/ws.png"
+  },
+  {
     "country": ["San Marino"],
     "countryCode": "SM",
     "flagSvg": "https://flagcdn.com/sm.svg",
