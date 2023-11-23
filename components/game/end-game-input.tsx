@@ -9,6 +9,7 @@ import { Spinner } from "@nextui-org/react";
 import getTimeSpent, { TTimeSpent } from "@/app/actions/getTimeSpent";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
+import filter from "leo-profanity";
 
 type TEndGameInput = {
   final_score: number;
@@ -36,14 +37,18 @@ const EndGameInput: React.FC<TEndGameInput> = ({
 
     if (name.length === 0) {
       toast({ title: "Missing Name", variant: "error" });
+      return;
     }
+
+    const newName = filter.clean(name);
+
     if (name.length !== 0) {
       setIsLoading(true);
 
       axios
         .post("/api/score", {
           score_count: final_score,
-          user_name: name,
+          user_name: newName,
           seconds_spent: Number(new Date(gameEndTime - gameStartTime)) / 1000,
         })
         .then(() => {
