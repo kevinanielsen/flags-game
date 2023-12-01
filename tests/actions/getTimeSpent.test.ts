@@ -1,4 +1,5 @@
 import getTimeSpent from "@/app/actions/getTimeSpent";
+import { describe, expect, it } from "vitest";
 
 describe("getTimeSpent function", () => {
   it("returns time in hours", () => {

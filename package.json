@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
+    "test": "vitest run",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "lint": "next lint",
