@@ -1,4 +1,5 @@
 import getTopScores from "@/app/actions/getTopScores";
+import { describe, test, expect } from "vitest";
 
 describe("getTopScores function", () => {
   test("Returns the best score at index 0", () => {
