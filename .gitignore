@@ -42,3 +42,7 @@ next-env.d.ts
 
 # bad words list
 app/actions/badWordsList.ts
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

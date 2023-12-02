@@ -48,6 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
+    "@playwright/test": "^1.40.1",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/leo-profanity": "^1.5.3",
     "@types/node": "latest",
