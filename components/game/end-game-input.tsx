@@ -65,6 +65,10 @@ const EndGameInput: React.FC<TEndGameInput> = ({
     }
   };
 
+  const handleSkip = () => {
+    router.push("/", { scroll: false });
+  };
+
   if (isLoading) return <Spinner />;
 
   return (
@@ -97,9 +101,14 @@ const EndGameInput: React.FC<TEndGameInput> = ({
             onChange={(e) => setName(e.target.value)}
           />
         </Label>
-        <Button type="submit" className="max-w-fit">
-          Submit score
-        </Button>
+        <div className="flex gap-x-2">
+          <Button type="submit" className="max-w-fit">
+            Submit score
+          </Button>
+          <Button type="button" variant="secondary" onClick={handleSkip}>
+            Skip
+          </Button>
+        </div>
       </form>
     </div>
   );
