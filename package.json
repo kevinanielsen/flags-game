@@ -36,7 +36,7 @@
     "framer-motion": "^10.16.5",
     "jsonwebtoken": "^9.0.2",
     "leo-profanity": "^1.7.0",
-    "lucide-react": "^0.309.0",
+    "lucide-react": "^0.310.0",
     "mongodb": "^6.2.0",
     "next": "latest",
     "next-themes": "^0.2.1",
