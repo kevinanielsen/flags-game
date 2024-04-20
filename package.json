@@ -39,7 +39,7 @@
     "lucide-react": "^0.344.0",
     "mongodb": "^6.2.0",
     "next": "latest",
-    "next-themes": "^0.2.1",
+    "next-themes": "^0.3.0",
     "react": "latest",
     "react-dom": "latest",
     "tailwind-merge": "^1.14.0",
