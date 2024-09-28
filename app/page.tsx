@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full max-w-2xl m-4 mt-12">
         <div className="border w-full grid justify-center items-center h-72 rounded-md">
           <Link
-            className="text-base font-bold bg-primary dark:text-primary dark:bg-text px-4 py-3 rounded-md"
+            className="text-base font-bold bg-primary text-white dark:text-primary dark:bg-text px-4 py-3 rounded-md"
             href="/game"
           >
             Start Game
