@@ -2,8 +2,7 @@
 
 import EndGameInput from "@/components/game/end-game-input";
 import Game from "@/components/game/game";
-//@ts-expect-error
-import CountriesList from "public/flags.json";
+import CountriesList from "../../public/flags.json";
 import { useEffect, useState } from "react";
 
 export interface ICountry {
