@@ -12,7 +12,7 @@ interface IBody {
 const ratelimit = newRateLimit(2, 20);
 
 export async function POST(req: NextRequest) {
-  const headersList = headers();
+  const headersList = await headers();
   const ip = headersList.get("x-forwarded-for") ?? "127.0.0.1";
 
   const { success, reset } = await ratelimit.limit(ip);

@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 const ratelimit = newRateLimit(5, 20);
 
 export async function GET() {
-  const headersList = headers();
+  const headersList = await headers();
   const ip = headersList.get("x-forwarded-for") ?? "127.0.0.1";
 
   const { success, reset } = await ratelimit.limit(ip);
